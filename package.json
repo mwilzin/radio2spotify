@@ -1,0 +1,13 @@
+{
+ "name": "radio2spotify",
+ "main": "setup.js",
+ "scripts": {
+  "start": "node ./setup"
+ },
+ "dependencies": {
+  "request-promise": "4.2.5",
+  "cheerio": "1.0.0-rc.3",
+  "spotify-web-api-node": "4.0.0",
+  "readline-sync": "1.4.10"
+ }
+}
