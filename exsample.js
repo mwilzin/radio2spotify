@@ -2,7 +2,7 @@ console.log('Getting song');
 const rp = require('request-promise');
 var fs = require('fs');
 const $ = require('cheerio');
-const settings = require('settings.json')
+const settings = require('./settings.json')
 var uri = settings.uri;
 var url = settings.url;
 var clientId = settings.clientId;
