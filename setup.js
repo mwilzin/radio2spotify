@@ -1,7 +1,7 @@
 const readlineSync = require('readline-sync')
 console.log('Thank you for using my tool.');
 const rp = require('request-promise');
-const exsample = 'https://raw.githubusercontent.com/triggeredLife/radio2spotify/master/exsample.js'
+const exsample = 'https://raw.githubusercontent.com/triggeredLife/radio2spotify/master/example.js'
 
 var clientId = readlineSync.question('Please enter your Spotify Client Id ');
 
