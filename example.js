@@ -39,6 +39,9 @@ setTimeout (function () {
       var songs = $('.tablelist-schedule', html).html();
       var song = songs.toUpperCase().split('>')[8];
       song = song.replace('</A', '')
+      if (song.startsWith('</td>')) {
+        song = songs.toUpperCase().split('>')[7];
+      }
       setTimeout(function () {
         console.log(song);
         // Spotify
