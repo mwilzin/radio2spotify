@@ -45,8 +45,3 @@ if (!fs.existsSync(name)){
   console.log('This name does already exist.');
   return;
 }
-
-// fs.unlink('start.sh', (err) => {
-//   if(err) return console.log(err);
-//   console.log('Deleted the start file');
-// })
