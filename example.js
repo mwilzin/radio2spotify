@@ -39,13 +39,15 @@ setTimeout (function () {
       var songs = $('.tablelist-schedule', html).html();
       var song = songs.toUpperCase().split('>')[8];
       song = song.replace('</A', '')
-      if (song.startsWith('</td>')) {
+      if (song === '\r\n</TR') {
         song = songs.toUpperCase().split('>')[7];
       }
+      artist = song.split('-')[0].split(" ")[0];
+      fSong = song.split('-')[1].split(" ")[1];
       setTimeout(function () {
-        console.log(song);
+        console.log(`${artist} - ${fSong}`);
         // Spotify
-        spotifyApi.searchTracks(`${song}`)
+        spotifyApi.searchTracks(`${artist} ${fSong}`)
         .then(function(data) {
           var finalSong = data.body.tracks.items.map(r => r.id)[0];
           if(!finalSong)return;
