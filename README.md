@@ -10,4 +10,4 @@ in the Folder
 node setup.js
 to add a radio channel.
 
-3. Execute the start.sh file to add songs from a radio channel to your spotify Playlist.
+3. Execute your personal start.sh file to add songs from a radio channel to your spotify Playlist.
