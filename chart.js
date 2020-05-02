@@ -6,8 +6,9 @@ var url = settings.url;
 var clientId = settings.clientId;
 var clientSecret = settings.clientSecret;
 var AccessToken = settings.AccessToken;
-var RefreshToken = settings.RefreshToken
-let followers = JSON.parse(fs.readFileSync('followers.json', "utf8"));
+var RefreshToken = settings.RefreshToken;
+var webdir = settings.webdir;
+let followers = JSON.parse(fs.readFileSync(`${webdir}/followers.json`, "utf8"));
 
 
 var SpotifyWebApi = require('spotify-web-api-node');
@@ -36,11 +37,14 @@ setTimeout(function () {
   spotifyApi.getPlaylist(uri).then(function(data) {
     var curFollowers = data.body.followers.total;
     console.log(curFollowers);
-    if (!followers[Date.now()]) followers[Date.now()] = curFollowers;
-    fs.writeFile('followers.json', JSON.stringify(followers), (err) => {
+    var d = new Date();
+    var date = `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`
+    followers.xaxes.push(date);
+    followers.yaxes.push(curFollowers);
+    fs.writeFile(`${webdir}/followers.json`, JSON.stringify(followers), (err) => {
       if (err) console.error(err);
     })
   }, function(err) {
     console.log('Something went wrong!', err);
   });
-}, 1000);
+}, 2000);
